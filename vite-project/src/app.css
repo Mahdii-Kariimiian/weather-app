@@ -1,0 +1,19 @@
+
+
+.input-section {
+    text-align: center;
+    padding: 4rem 0 2rem;
+}
+
+.input {
+    opacity: .8;
+    width: 50%;
+    max-width: 500px;
+    padding:.5rem 1rem;
+    border: none;
+    border-radius: 50px;
+}
+
+.input:hover {
+    opacity: 1;
+}
