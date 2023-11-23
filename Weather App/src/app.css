@@ -11,9 +11,21 @@
     max-width: 500px;
     padding:.5rem 1rem;
     border: none;
-    border-radius: 50px;
+    border-radius: 50px 0 0 50px;
 }
 
 .input:hover {
+    opacity: 1;
+}
+
+.submit-btn {
+    opacity: .8;
+    padding:.5rem 1rem;
+    border: none;
+    border-radius: 0 50px 50px 0;
+}
+
+.submit-btn:hover {
+    cursor: pointer;
     opacity: 1;
 }

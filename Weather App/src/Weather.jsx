@@ -1,5 +1,6 @@
 import React from 'react'
 import "./weather.css"
+//Icons
 import { FiCloudRain } from "react-icons/fi";
 import { BsFillCloudSnowFill } from "react-icons/bs";
 import { WiThermometerExterior } from "react-icons/wi";
@@ -8,8 +9,7 @@ import { IoCloudSharp } from "react-icons/io5";
 import { GiFog } from "react-icons/gi";
 
 function Weather(props) {
-  console.log(props.data.weather[0].main)
-
+  // Status Icons
   const weatherStaus = props.data.weather[0].main
   let statusIcon;
   switch (weatherStaus) {
@@ -38,15 +38,17 @@ function Weather(props) {
           {props.name}
         </h3>
         <h1>
-          {(Number(props.data.main.temp)-273).toFixed(2)} °C
+          {(Number(props.data.main.temp)-273).toFixed(1)} °C
         </h1>
       </div>
+      
       <div className="weather-status">
-        {statusIcon}
+      {props.data.weather[0].main}
       </div>
+
       <div className='weather-info weather-styling'>
         <div >
-          <p>{(Number(props.data.main.feels_like)-273).toFixed(2)} °C</p>
+          <p>{(Number(props.data.main.feels_like)-273).toFixed(1)} °C</p>
           <p>Feels Like</p>
         </div>
         <div>

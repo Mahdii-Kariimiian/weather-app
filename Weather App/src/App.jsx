@@ -19,7 +19,9 @@ function App() {
           const longitude = res.data[0].lon
           fetchCoordinateData (latitude , longitude , name)
          
-      }).catch(err => console.log("err"))
+      }).catch(err => {
+          alert("City not found. Please try again")})
+          document.querySelector(".input").value = ""
     }
     // fetch weather data based on city name
     const fetchCoordinateData = (latitude , longitude , name) => {
@@ -27,29 +29,40 @@ function App() {
       axios.get(url2)
         .then (res=> {
           setWeatherComponent(<Weather data={res.data} name={name} />)
-        }).catch(err => console.log(err))
+        }).catch(err => console.log("City not found"))
     }
     fetchCityData()
     fetchCoordinateData()
   } , [url])
   // modify Url based on entered city
-  const chooseCity = (e)=> {
-    let city = e.target.value
+  const chooseCity = (inputValue)=> {
+    let city = inputValue.toLowerCase()
     setUrl(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=142bace15bea5d3947656e43ec60ee75`)
   }
   
   return (
     <>
-    <div className="input-section">
+    <form className="input-section">
       <input className="input"
-        onChange={(e)=>{chooseCity(e)}}
         type="text" 
         placeholder="Enter City Name"
       />
-    </div>
+      <button 
+        className="submit-btn"
+        type="submit" 
+        onClick={(e)=> {
+          e.preventDefault()
+          const inputValue = document.querySelector(".input").value
+          chooseCity(inputValue)}}
+        >
+          Search City
+        </button>
+    </form>
       {weatherComponent}
     </>
   )
 }
 
 export default App
+
+
