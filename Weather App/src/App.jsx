@@ -5,7 +5,7 @@ import "./app.css"
 
 function App() {
   //Set url and fetch coordinates
-  const [url , setUrl] = useState(`http://api.openweathermap.org/geo/1.0/direct?q=turin&limit=5&appid=142bace15bea5d3947656e43ec60ee75`)
+  const [url , setUrl] = useState(`https://api.openweathermap.org/geo/1.0/direct?q=turin&limit=5&appid=142bace15bea5d3947656e43ec60ee75`)
   // render Weather component
   const [weatherComponent , setWeatherComponent] = useState(null)
   // fetching data
