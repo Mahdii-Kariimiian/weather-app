@@ -7,7 +7,7 @@
 }
 
 .weather-styling {
-  min-width: 300px;
+  min-width: 200px;
   align-self: center;
 
   background-color: rgba(255, 255, 255, 0.375);
@@ -15,6 +15,7 @@
 
   text-align: center;
   border-radius: 10px;
+  margin-bottom: 1rem;
 }
 
 .weather-section {
@@ -37,5 +38,22 @@
 
 .weather-status {
   text-align: center;
-  font-size: 5rem;
+  font-size: 8rem;
+  color: black;
+}
+
+.centigrade {
+  font-size: 2rem;
+}
+
+.description {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@media (max-width: 500px) {
+  .weather-info {
+    flex-direction: column;
+    gap: 1rem
+  }
 }
