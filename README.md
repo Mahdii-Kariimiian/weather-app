@@ -15,7 +15,7 @@ This is a simple weather app built with React that allows users to search for th
 - OpenWeatherMap API (for fetching weather data)
 - CSS for styling
 
-## screenshot
+## Screenshot
 
 ![Uploading weather screenshot.png…]()
 
